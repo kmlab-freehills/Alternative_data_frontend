@@ -1,0 +1,9 @@
+# frontend のビルド・依存ファイル
+frontend/node_modules/
+frontend/.next/
+frontend/dist/
+
+# ログや環境変数
+*.log
+.env
+.env.*
