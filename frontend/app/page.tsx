@@ -111,6 +111,7 @@ const WINDOW_POINTS: Record<Exclude<RangeMode, "CUSTOM">, number> = {
   MONTH: 52,   // 約1年
   YEAR: 156,   // 約3年
   ALL: Infinity,
+  CUSTOM: Infinity, // 実際には使っていなくても、とりあえず定義して型エラーを防ぐ
 };
 
 export default function Page() {
