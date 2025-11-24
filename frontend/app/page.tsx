@@ -102,7 +102,7 @@ function CustomTooltip({ active, payload, label }: any) {
 }
 
 // ---------------- 範囲ロジック（点数ベース） ----------------
-type RangeMode = "DAY" | "WEEK" | "MONTH" | "YEAR" | "ALL" | "CUSTOM";
+type RangeMode = "DAY" | "WEEK" | "MONTH" | "YEAR" | "ALL";
 
 // 週次データでも確実に見た目が変わる点数
 const WINDOW_POINTS: Record<Exclude<RangeMode, "CUSTOM">, number> = {
@@ -111,7 +111,6 @@ const WINDOW_POINTS: Record<Exclude<RangeMode, "CUSTOM">, number> = {
   MONTH: 52,   // 約1年
   YEAR: 156,   // 約3年
   ALL: Infinity,
-  CUSTOM: Infinity, // 実際には使っていなくても、とりあえず定義して型エラーを防ぐ
 };
 
 export default function Page() {
