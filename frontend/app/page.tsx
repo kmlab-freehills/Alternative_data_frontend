@@ -111,7 +111,6 @@ const WINDOW_POINTS: Record<RangeMode, number> = {
   MONTH: 52,    // 約1年
   YEAR: 156,    // 約3年
   ALL: Infinity,
-  CUSTOM: Infinity, // これで型定義と矛盾しなくなります
 };
 
 export default function Page() {
@@ -294,7 +293,6 @@ export default function Page() {
                   {m === "ALL" && "最大"}
                 </button>
               ))}
-              {mode === "CUSTOM" && <Badge>カスタム</Badge>}
             </div>
             <div className="flex items-center gap-1">
               <button className="px-2 py-1 text-xs rounded-lg border border-brand-800 bg-surface-100 text-brand-100/90 hover:text-white" onClick={jumpOldest} title="最古へ">⏮</button>
