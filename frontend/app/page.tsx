@@ -105,12 +105,13 @@ function CustomTooltip({ active, payload, label }: any) {
 type RangeMode = "DAY" | "WEEK" | "MONTH" | "YEAR" | "ALL";
 
 // 週次データでも確実に見た目が変わる点数
-const WINDOW_POINTS: Record<Exclude<RangeMode, "CUSTOM">, number> = {
-  DAY: 12,     // 直近12点（約3ヶ月の週次でもギュッと）
-  WEEK: 26,    // 約半年
-  MONTH: 52,   // 約1年
-  YEAR: 156,   // 約3年
+const WINDOW_POINTS: Record<RangeMode, number> = {
+  DAY: 12,      // 直近12点（約3ヶ月の週次でもギュッと）
+  WEEK: 26,     // 約半年
+  MONTH: 52,    // 約1年
+  YEAR: 156,    // 約3年
   ALL: Infinity,
+  CUSTOM: Infinity, // これで型定義と矛盾しなくなります
 };
 
 export default function Page() {
